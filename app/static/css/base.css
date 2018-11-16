@@ -1,0 +1,23 @@
+#nav1{
+    width: 50%;
+}
+#nav1 li{
+    width: 25%;
+    text-align: center;
+}
+#nav1 li ul li{
+    width: 100%;
+}
+.register{
+    float: right;
+}
+.quit{
+    float: left;
+}
+.input-group #getcode{
+    width: 20%;
+    float: right;
+}
+.input-group #checkcode{
+    width: 50%;
+}
