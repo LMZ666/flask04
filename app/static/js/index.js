@@ -1,3 +1,4 @@
 $(function(){
     $("#index").addClass("active")
+
 })

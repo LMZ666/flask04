@@ -15,7 +15,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">购物商场</a>
+                <a id="market" class="navbar-brand" href={{ url_for("bp.market") }}>购物商场</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -91,17 +91,17 @@
                                             <div class="form-group has-success has-feedback">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">邮箱</span>
-                                                    <input name="email" type="text" class="form-control"
+                                                    <input name="email" id="email" type="text" class="form-control"
                                                            aria-describedby="inputGroupSuccess1Status">
                                                 </div>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">密码</span>
-                                                    <input name="passwd" type="text" class="form-control"
+                                                    <input name="passwd" id="passwd1" type="text" class="form-control"
                                                            aria-describedby="inputGroupSuccess1Status">
                                                 </div>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">密码</span>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" id="passwd2" class="form-control"
                                                            aria-describedby="inputGroupSuccess1Status">
                                                 </div>
                                                 <div class="input-group">
@@ -121,8 +121,6 @@
                             </div>
                         </form>
                         <!-- Modal -->
-
-
                     {% endblock %}
 
                 </ul>
@@ -131,7 +129,9 @@
     </nav>
     {% block scripts %}
         {{ super() }}
+        <script src={{ url_for("static",filename="js/base.js") }}></script>
     {% endblock %}
+
     <div class="container">
         {% block content %}
 

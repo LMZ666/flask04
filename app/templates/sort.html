@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for("static",filename="css/market.css") }}>
+{% endblock %}
+
+{% block content %}
+    <h3>{{ type }}</h3>
+    <div id="row" class="row">
+        {% for goods in paginates.items %}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src={{ url_for("static",filename=goods.img) }} alt="...">
+                    <div class="caption">
+                        <div>
+                            <h5>{{ goods.name }}</h5>
+                            <span id="price">{{ goods.price }}</span>
+                            <span id="org_price">{{ goods.org_price }}</span>
+                            <span id="buy_num">销量：{{ goods.buy_num }}</span>
+                            <span id="quan">领券{{ goods.quan }}</span>
+                        </div>
+
+                        <p><a href="#" class="buy btn btn-danger" role="button">立即购买</a> <a href="#"
+                                                                                            class="btn btn-default to_cart"
+                                                                                            role="button">加入购物车</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="page">
+        {% from "mymacro.html" import render_pagination %}
+        {{ render_pagination(paginates,"bp.sortGoods") }}
+    </div>
+
+{% endblock %}

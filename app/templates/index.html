@@ -6,12 +6,61 @@
 
 {% block body %}
     {{ super() }}
-    {% if user %}
-        {{ user.name }}
-    {% endif %}
-    {% block scripts %}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src={{ url_for("static",filename="js/index.js") }}>
+    </script>
+{% endblock %}
+
+{# 如果是坑里面还有坑，在填坑的时候不要把填的坑放在坑里面 #}
+{% block login %}
+    {% if name %}
+        <li><a href="javascript:">欢迎:{{ name }}</a></li>
+        <li><a href={{ url_for("bp.logout") }}>退出</a></li>
+    {% else %}
         {{ super() }}
-        <script src={{ url_for("static",filename="js/index.js") }}>
-        </script>
-    {% endblock %}
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+    <div id="classify">
+        {% for class in classfiy %}
+            {% if loop.first %}
+                <div  class="list-group classify">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">商品分类展示</h4>
+                    </a>
+                </div>
+            {% else %}
+                <div  class="list-group classify">
+
+                <a href={% if loop.index0 < 4 %}{{url_for("bp.sortGoods",type=class.name)}}{% else %}javascript:{% endif %} class="list-group-item">
+                    <h5 class="list-group-item-heading">{{ class.name }}</h5>
+                        <p class="list-group-item-text" style="color: red;">火爆</p>
+                    </a>
+
+
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+    <div id="slide">
+
+        {% from "mymacro.html" import slide %}
+        {{ slide(wheels) }}
+    </div>
+    <div class="index_show">
+        <div class="title" style="background-image: url({{url_for("static",filename="img/title/title2.png")}})">
+        </div>
+        <div class="title4" style="background-image: url({{url_for("static",filename="img/title/title4.png")}})">
+        </div>
+    <div class="titl3" style="background-image: url({{url_for("static",filename="img/title/title2.png")}})">
+        </div>
+    </div>
+
 {% endblock %}

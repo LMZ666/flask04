@@ -1,0 +1,24 @@
+#row .to_cart{
+    float: right;
+}
+#row #price{
+    color: red;
+}
+#row #org_price{
+    height: 2em;
+    text-decoration: line-through;
+}
+#row #quan{
+    border: 1px dashed red;
+}
+#row .caption span{
+    margin: 0.8em;
+}
+#row .caption{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#page{
+    text-align: center;
+}

@@ -10,6 +10,17 @@ class User(db.Model):
     passwd = db.Column(db.String(100))
     img = db.Column(db.String(256))
 
+class Goods(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(100))
+    img = db.Column(db.String(100))
+    org_price = db.Column(db.String(30))
+    price = db.Column(db.String(30))
+    buy_num = db.Column(db.String(30))
+    quan = db.Column(db.String(30))
+    type = db.Column(db.String(30),default="男装")
+
+
 
 
 # class Goods(db.Model):

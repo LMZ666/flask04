@@ -1,0 +1,35 @@
+#slide{
+    width: 65%;
+    height: 50%;
+    margin-right: 5%;
+    float: right;
+}
+.classify{
+    width: 92%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom:1%;
+    text-align: center;
+}
+#classify{
+    width: 20%;
+    float: left;
+    margin-left: 5%;
+    background: gray;
+}
+.index_show{
+    float: left;
+    width: 100%;
+}
+.title,.title4{
+    height: 6em;
+    width: 100%;
+    background-size: cover;
+    float: left;
+}
+.title4{
+    margin-top: 3em;
+    height: 10em;
+}
+
+
