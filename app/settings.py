@@ -19,7 +19,18 @@ class Baseenv(object):
 
 class Developenv(Baseenv):
     DEBUG = True
-    TESTING = True
+    # TESTING = True
+    # qq邮箱
+    MAIL_SERVER = 'smtp.qq.com'
+    # 使用的是qq的stmp加密服务端口
+    MAIL_PORT = 465
+    MAIL_USE_SSL = True
+    # 默认使用这个邮箱发送
+    MAIL_DEFAULT_SENDER = "lmzqqyouxiang@qq.com"
+    # 我的qq邮箱smtp授权码
+    MAIL_PASSWORD = "oslpkdmbkzjabhcc"
+    MAIL_USERNAME = "lmzqqyouxiang@qq.com"
+
     database = {
         "dbname":"flask04"
     }

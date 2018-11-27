@@ -31,7 +31,8 @@ class Goods(db.Model):
 #     u_usergoods = db.relationship("UserGoods",backref="goods",lazy=True)
 #
 #
-# class UserGoods(db.Model):
-#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     u_goods = db.Column(db.Integer, db.ForeignKey(Goods.id,ondelete="CASCADE",onupdate="CASCADE"))
-#     u_user = db.Column(db.Integer, db.ForeignKey(User.id,ondelete="CASCADE",onupdate="CASCADE"))
+class UserGoods(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    u_goods = db.Column(db.Integer, db.ForeignKey(Goods.id,ondelete="CASCADE",onupdate="CASCADE"))
+    u_user = db.Column(db.Integer, db.ForeignKey(User.id,ondelete="CASCADE",onupdate="CASCADE"))
+    num = db.Column(db.Integer)

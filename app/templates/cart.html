@@ -1,7 +1,49 @@
 {% extends "base.html" %}
+
+{% block title %}
+购物车
+{% endblock %}
 {% block scripts %}
     {{ super() }}
     <script src={{ url_for("static",filename="js/cart.js") }}>
 
     </script>
+{% endblock %}
+{% block styles %}
+{{ super() }}
+    <link href="{{ url_for("static",filename="css/cart.css") }}">
+{% endblock %}
+{% block login %}
+    {% if name %}
+        <li id="header">
+            <a>
+                <img src="{{ url_for("static",filename=img) }}" alt="头像">
+            </a>
+        </li>
+        <li><a id="name" name="name" href="javascript:">欢迎:{{ name }}</a></li>
+        <li><a href={{ url_for("bp.logout") }}>退出</a></li>
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+{% block content %}
+        {% for good in goods %}
+            <div class="media" style="height: 100px;">
+                <div class="media-left">
+                    <a href="#">
+                        <img style="height: 100px;" class="media-object" src="{{ url_for("static",filename=good[0].img) }}" alt="{{ good[0].name }}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading" style="color: red;">{{ good[0].name }}</h4>
+                    <div style="line-height: 70px" goodid="{{ good[0].id }}">
+                        价格：<i>{{ good[0].price }}</i>
+                        <label class="btn btn-default minus">减</label><p class="btn btn-default" >{{good[1]  }}</p><label class="btn btn-default add" >加</label>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <h4 id="sum" ></h4>
+       <label id="pay" class="btn btn-danger">去支付</label>
 {% endblock %}

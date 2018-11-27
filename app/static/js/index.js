@@ -1,4 +1,9 @@
 $(function(){
     $("#index").addClass("active")
-
+    if($("#name").attr("name")){
+        console.log("exist")
+    }
+    else{
+        console.log("none")
+    }
 })

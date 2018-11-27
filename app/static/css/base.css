@@ -15,12 +15,26 @@
     float: left;
 }
 .input-group #getcode{
-    width: 20%;
+    width: 50%;
     float: right;
 }
 .input-group #checkcode{
-    width: 50%;
+    width: 40%;
 }
+.modal-body .input-group{
+    width:300px;
+    margin: auto;
+    margin-bottom: 1em;
+}
+#header img{
+    width:50px ;
+    height:50px;
+    border-radius: 50%;
+}
+#header a{
+    padding: 0;
+}
+
 /*#market{*/
     /*width: 10%;*/
 /*}*/

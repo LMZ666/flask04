@@ -17,7 +17,12 @@
 {# 如果是坑里面还有坑，在填坑的时候不要把填的坑放在坑里面 #}
 {% block login %}
     {% if name %}
-        <li><a href="javascript:">欢迎:{{ name }}</a></li>
+        <li id="header">
+            <a>
+                <img src="{{ url_for("static",filename=img) }}" alt="头像">
+            </a>
+        </li>
+        <li><a id="name" name="name" href="javascript:">欢迎:{{ name }}</a></li>
         <li><a href={{ url_for("bp.logout") }}>退出</a></li>
     {% else %}
         {{ super() }}
